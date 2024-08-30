@@ -3,7 +3,7 @@ import { ThemeContext, AudioContext, LanguageContext } from "../context";
 
 import { mainlogo, header1, header2 } from "../assets";
 
-const Header = () => {
+const Footer = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
   const { language, switchLanguage } = useContext(LanguageContext);
   const { audio, toggleAudio } = useContext(AudioContext);
@@ -47,4 +47,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Footer;

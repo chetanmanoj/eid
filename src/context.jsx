@@ -15,7 +15,7 @@ export const AppProvider = ({ children }) => {
   const [audio, setAudio] = useState(true);
 
   // State for language, default is 'en'
-  const [language, setLanguage] = useState('en');
+  const [language, setLanguage] = useState('ar');
 
   // Function to toggle theme between 'light' and 'dark'
   const toggleTheme = () => {
