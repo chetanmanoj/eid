@@ -22,58 +22,56 @@ const Mainarea = () => {
           : `After that much-needed family time, it’s the kids’ favourite part, Eideyah! Time for them to engage in friendly banter as to who received the most.`}
       </div>
 
-      <div>
-        <div className=" font-light  self-center text-center">
-          <div className="flex flex-row gap-5 justify-center">
-            {language === "ar" ? (
-              <>
-                <img
-                  src={eidarablight}
-                  alt="Eid Mubarak"
-                  className="h-[19rem] rounded-xl border-2 border-[#902cf5]"
-                />
-                <img
-                  src={eidarabdark}
-                  alt="Eid Mubarak"
-                  className="h-[19rem] rounded-xl border-2 border-[#f5c547] "
-                />
-              </>
-            ) : (
-              <>
-                <img
-                  src={eidenglight}
-                  alt="Eid Mubarak"
-                  className="h-[19rem] rounded-xl border-2 border-[#902cf5]"
-                />
-                <img
-                  src={eidengdark}
-                  alt="Eid Mubarak"
-                  className="h-[19rem] rounded-xl border-2 border-[#f5c547]"
-                />
-              </>
-            )}
-          </div>
+      <div className=" font-light  self-center text-center">
+        <div className="flex flex-row gap-5 justify-center">
+          {language === "ar" ? (
+            <>
+              <img
+                src={eidarablight}
+                alt="Eid Mubarak"
+                className="h-[19rem] rounded-xl border-2 border-[#902cf5]"
+              />
+              <img
+                src={eidarabdark}
+                alt="Eid Mubarak"
+                className="h-[19rem] rounded-xl border-2 border-[#f5c547] "
+              />
+            </>
+          ) : (
+            <>
+              <img
+                src={eidenglight}
+                alt="Eid Mubarak"
+                className="h-[19rem] rounded-xl border-2 border-[#902cf5]"
+              />
+              <img
+                src={eidengdark}
+                alt="Eid Mubarak"
+                className="h-[19rem] rounded-xl border-2 border-[#f5c547]"
+              />
+            </>
+          )}
+        </div>
 
-          <span
-            className={`flex flex-col text-[32px] font-bold mt-[90px] ${
-              theme === "light" ? "text-[#eb436f]" : "text-[#87ec6c]"
-            }`}
-          >
-            {language === "ar" ? `بطاقات المعايدة` : `Greeting Cards`}
-          </span>
-          <span className="mt-4 mb-12 ">
-            {language === "ar"
-              ? `حمّل بطاقات المعايدة لتشاركها مع أهلك وناسك`
-              : `To share with your loved ones!`}
-          </span>
-          <div className="flex flex-row mt-4 gap-4">
-            <button className={buttonClass}>
-              {language === "ar" ? `اكتشف فعاليات العيد` : `Your Greeting`}
-            </button>
-            <button className={buttonClass}>
-              {language === "ar" ? `اكتشف فعاليات العيد` : `Create your own`}
-            </button>
-          </div>
+        <span
+          className={`flex flex-col text-[32px] font-bold mt-[90px] ${
+            theme === "light" ? "text-[#eb436f]" : "text-[#87ec6c]"
+          }`}
+        >
+          {language === "ar" ? `بطاقات المعايدة` : `Greeting Cards`}
+        </span>
+        <span className="mt-4 mb-12 ">
+          {language === "ar"
+            ? `حمّل بطاقات المعايدة لتشاركها مع أهلك وناسك`
+            : `To share with your loved ones!`}
+        </span>
+        <div className="flex flex-row mt-4 gap-4">
+          <button className={buttonClass}>
+            {language === "ar" ? `اكتشف فعاليات العيد` : `Your Greeting`}
+          </button>
+          <button className={buttonClass}>
+            {language === "ar" ? `اكتشف فعاليات العيد` : `Create your own`}
+          </button>
         </div>
       </div>
 

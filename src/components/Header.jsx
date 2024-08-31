@@ -11,6 +11,7 @@ const Header = () => {
   return (
     <div className="flex flex-col py-10 overflow-hidden h-[22rem] max-w-screen">
       <div className="flex flex-row px-14 justify-between z-20 ">
+        {/* LHS OR BUTTON FOR LANG. AND AUDIO  */}
         <div className="flex flex-row gap-5">
           <button
             onClick={() => switchLanguage(language === "en" ? "ar" : "en")}
@@ -25,9 +26,11 @@ const Header = () => {
             {audio === true ? "Mute" : "Unmute"}
           </button>
         </div>
+        {/* LOG  */}
         <div className="">
           <img src={mainlogo} alt="Logo" className="h-32" />
         </div>
+        {/* RHS / BUTTON FOR THEME  */}
         <div className="">
           <button
             onClick={toggleTheme}
@@ -37,6 +40,7 @@ const Header = () => {
           </button>
         </div>
       </div>
+      {/* HEADER DECOR  */}
       <div className="relative z-10">
         <img
           src={header1}

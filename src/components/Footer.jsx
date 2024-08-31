@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ThemeContext, AudioContext, LanguageContext } from "../context";
+import { ThemeContext, LanguageContext } from "../context";
 import { mainlogo, footerg, footero, footerp } from "../assets";
 import { motion, useTransform, useScroll } from "framer-motion";
 
@@ -15,6 +15,7 @@ const Footer = () => {
 
   return (
     <div className="flex flex-col py-10 overflow-hidden max-w-screen">
+      {/* REPLAY BUTTON / RESET WINDOW POSITION  */}
       <div className="flex flex-col items-center h-[10rem]">
        <button
         onClick={() => window.scrollTo(0, 0)}
@@ -28,9 +29,10 @@ const Footer = () => {
         {language === "ar" ? "عيد الرحلة من جديد" : `Replay The Journey`}
       </button>
       </div>
+      {/* EVENT AND GROUP LOGOS  */}
       <div className="flex flex-row justify-center items-center mb-[12.3rem] h-[4.375rem]">
         <span
-          className={`border-r-[1px] h-32 text-center text-[4rem] ${
+          className={`border-r-[1px]  text-center text-[3rem] px-6 ${
             theme === "light" ? "border-[#8a59c8]" : "border-white"
           }`}
         >
@@ -44,6 +46,7 @@ const Footer = () => {
           }`}
         />
       </div>
+      {/* BOTTOM DECOR  */}
       <div className=" relative h-[18.75rem]">
         <motion.img
           src={footerg}

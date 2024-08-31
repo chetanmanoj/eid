@@ -10,15 +10,19 @@ import {
 } from "../assets";
 
 const Mixup = () => {
+  // Context / States
   const { theme } = useContext(ThemeContext);
   const { language } = useContext(LanguageContext);
 
+  // Variables to store animation properties
   const { scrollY } = useScroll();
   const scaleEid = useTransform(scrollY, [4200, 4800], [1, 0.6]);
   const rotateEid = useTransform(scrollY, [4200, 4800], [0, 25]);
   const moveEidx = useTransform(scrollY, [4200, 4800], [0, 300]);
   const moveEidy = useTransform(scrollY, [4200, 4800], [0, 300]);
 
+
+  // Condition check for logo to be rendered
   const getImageSrc = () => {
     if (theme === "light" && language === "en") return bigeidenglight;
     if (theme === "dark" && language === "en") return bigeidengdark;
@@ -29,9 +33,9 @@ const Mixup = () => {
 
   const imageSrc = getImageSrc();
 
-  window.addEventListener("scroll", () => {
-    console.log("Scroll Position:", window.scrollY + "px");
-  });
+  // window.addEventListener("scroll", () => {
+  //   console.log("Scroll Position:", window.scrollY + "px");
+  // });
   return (
     <div className="flex flex-col h-[50rem]">
       <div className="relative flex justify-center">
