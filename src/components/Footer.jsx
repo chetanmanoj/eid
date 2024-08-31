@@ -4,14 +4,30 @@ import { mainlogo, footerg, footero, footerp } from "../assets";
 import { motion, useTransform, useScroll } from "framer-motion";
 
 const Footer = () => {
+  // Import context/state
   const { theme, toggleTheme } = useContext(ThemeContext);
   const { language, switchLanguage } = useContext(LanguageContext);
+
+  // Variables for animation of certain elements
   const { scrollY } = useScroll();
-  const movePinky = useTransform(scrollY, [4260, 4400], [0, -250]);
-  const moveGreeny = useTransform(scrollY, [4260, 4400], [0, -250]);
+  const movePinky = useTransform(scrollY, [5200, 5300], [0, -50]);
+  const moveGreeny = useTransform(scrollY, [5200, 5300], [0, -50]);
 
   return (
     <div className="flex flex-col py-10 overflow-hidden max-w-screen">
+      <div className="flex flex-col items-center h-[10rem]">
+       <button
+        onClick={() => window.scrollTo(0, 0)}
+        className={`font-bold rounded-3xl px-6 text-[1.125rem] w-[16.25rem] h-[3.2rem] transition duration-300 
+     ${
+       theme === "light"
+         ? "bg-[#8a59c8] text-white hover:bg-[#f5c547]"
+         : "bg-[#f5c547] text-[#514f53] hover:bg-white"
+     }`}
+      >
+        {language === "ar" ? "عيد الرحلة من جديد" : `Replay The Journey`}
+      </button>
+      </div>
       <div className="flex flex-row justify-center items-center mb-[12.3rem] h-[4.375rem]">
         <span
           className={`border-r-[1px] h-32 text-center text-[4rem] ${

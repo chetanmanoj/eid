@@ -2,7 +2,7 @@ import { useContext, useState, useEffect, useRef } from "react";
 import { LanguageContext, ThemeContext, AudioContext } from "../context";
 
 import { Header, Footer } from "../components";
-import { Hero, Hero2, Events, Mainarea, Final, Mixup } from "../sections";
+import { Hero, Hero2, Events, Mainarea, Mixup } from "../sections";
 import { birds, crowd, adhan, eidmain } from "../assets";
 
 const sections = [
@@ -14,14 +14,17 @@ const sections = [
 const defaultAudio = eidmain;
 
 const Home = () => {
+  // useState for the active section
   const [active, setActive] = useState("");
 
+  // Import context/state
   const { language } = useContext(LanguageContext);
   const { theme } = useContext(ThemeContext);
   const { audio } = useContext(AudioContext);
 
   const audioRef = useRef(new Audio());
 
+  // useEffect for checking active section
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.innerHeight / 2;
@@ -50,6 +53,7 @@ const Home = () => {
     };
   }, [active]);
 
+  // useEffect for playing audio based on the section
   useEffect(() => {
     if (audio) {
       if (active === "default") {
@@ -85,7 +89,6 @@ const Home = () => {
       </div>
       <div id="final">
         <Mainarea />
-        <Final />
         <Mixup />
         <Footer />
       </div>

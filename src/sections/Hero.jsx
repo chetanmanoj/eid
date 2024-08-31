@@ -13,15 +13,18 @@ import {
 } from "../assets";
 
 const Hero = () => {
+  // Import context/state 
   const { theme } = useContext(ThemeContext);
   const { language } = useContext(LanguageContext);
 
+  // Animation variables
   const { scrollY } = useScroll();
   const scaleEid = useTransform(scrollY, [0, 500], [1, 1.1]);
   const moveJugx = useTransform(scrollY, [0, 500], [0, -400]);
   const moveJugy = useTransform(scrollY, [0, 500], [0, -150]);
   const moveFlagy = useTransform(scrollY, [0, 900], [0, -250]);
 
+  // Function to get the correct image for the specific theme and language
   const getImageSrc = () => {
     if (theme === "light" && language === "en") return eidlight2;
     if (theme === "dark" && language === "en") return eiddark2;

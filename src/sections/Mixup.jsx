@@ -14,10 +14,10 @@ const Mixup = () => {
   const { language } = useContext(LanguageContext);
 
   const { scrollY } = useScroll();
-  const scaleEid = useTransform(scrollY, [3700, 4300], [1, 0.6]);
-  const rotateEid = useTransform(scrollY, [3700, 4300], [0, 25]);
-  const moveEidx = useTransform(scrollY, [3700, 4300], [0, 300]);
-  const moveEidy = useTransform(scrollY, [3700, 4300], [0, 300]);
+  const scaleEid = useTransform(scrollY, [4200, 4800], [1, 0.6]);
+  const rotateEid = useTransform(scrollY, [4200, 4800], [0, 25]);
+  const moveEidx = useTransform(scrollY, [4200, 4800], [0, 300]);
+  const moveEidy = useTransform(scrollY, [4200, 4800], [0, 300]);
 
   const getImageSrc = () => {
     if (theme === "light" && language === "en") return bigeidenglight;
@@ -33,7 +33,7 @@ const Mixup = () => {
     console.log("Scroll Position:", window.scrollY + "px");
   });
   return (
-    <div className="flex flex-col  h-[50rem]">
+    <div className="flex flex-col h-[50rem]">
       <div className="relative flex justify-center">
         {imageSrc && (
           <motion.img
@@ -49,6 +49,7 @@ const Mixup = () => {
           />
         )}
       </div>
+     
     </div>
   );
 };

@@ -1,12 +1,9 @@
-// src/context.js
 import  { createContext, useState } from 'react';
 
-// Create the ThemeContext and LanguageContext
 export const ThemeContext = createContext();
 export const AudioContext = createContext();
 export const LanguageContext = createContext();
 
-// Create the provider component
 export const AppProvider = ({ children }) => {
   // State for theme, default is 'light'
   const [theme, setTheme] = useState('light');
@@ -14,19 +11,20 @@ export const AppProvider = ({ children }) => {
   // State for audio, default is 'on'
   const [audio, setAudio] = useState(true);
 
-  // State for language, default is 'en'
+  // State for language, default is 'ar'
   const [language, setLanguage] = useState('ar');
 
-  // Function to toggle theme between 'light' and 'dark'
+  // Function to toggle theme
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
   };
 
+  // Function to toggle audio
   const toggleAudio = () => {
     setAudio(!audio)
   }
 
-  // Function to switch language between 'en' (English) and 'es' (Spanish)
+  // Function to switch language 
   const switchLanguage = (lang) => {
     setLanguage(lang);
   };

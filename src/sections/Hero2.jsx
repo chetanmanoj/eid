@@ -2,11 +2,12 @@ import { useContext } from "react";
 import { ThemeContext, LanguageContext } from "../context";
 
 const Hero2 = () => {
+    // Import context/state 
   const { theme } = useContext(ThemeContext);
   const { language } = useContext(LanguageContext);
 
   return (
-    <div className="flex flex-col items-center gap-5 mb-64">
+    <div className="flex flex-col items-center gap-5 pb-64">
       <div className="text-[1.875rem] font-light w-[26.125rem] mt-[30rem] self-center text-center  ">
         {language === "ar"
           ? `هلا هلا بالعيد اللي لنا سنة نستناه ما ننسى البخور ولبس العيد اللي مجهزينه وننتظر اليوم اللي نلبسه`

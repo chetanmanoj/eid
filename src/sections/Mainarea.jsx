@@ -1,10 +1,13 @@
 import { useContext } from "react";
 import { ThemeContext, LanguageContext } from "../context";
+import { eidarabdark, eidarablight, eidengdark, eidenglight } from "../assets";
 
 const Mainarea = () => {
+  // Import context/state
   const { theme } = useContext(ThemeContext);
   const { language } = useContext(LanguageContext);
 
+  // Button style variable
   const buttonClass = `font-bold rounded-3xl px-6 text-[1.125rem] w-[18rem] h-[3.2rem] transition duration-300 ${
     theme === "light"
       ? "bg-[#8a59c8] text-white hover:bg-[#f5c547]"
@@ -21,8 +24,38 @@ const Mainarea = () => {
 
       <div>
         <div className=" font-light  self-center text-center">
+          <div className="flex flex-row gap-5 justify-center">
+            {language === "ar" ? (
+              <>
+                <img
+                  src={eidarablight}
+                  alt="Eid Mubarak"
+                  className="h-[19rem] rounded-xl border-2 border-[#902cf5]"
+                />
+                <img
+                  src={eidarabdark}
+                  alt="Eid Mubarak"
+                  className="h-[19rem] rounded-xl border-2 border-[#f5c547] "
+                />
+              </>
+            ) : (
+              <>
+                <img
+                  src={eidenglight}
+                  alt="Eid Mubarak"
+                  className="h-[19rem] rounded-xl border-2 border-[#902cf5]"
+                />
+                <img
+                  src={eidengdark}
+                  alt="Eid Mubarak"
+                  className="h-[19rem] rounded-xl border-2 border-[#f5c547]"
+                />
+              </>
+            )}
+          </div>
+
           <span
-            className={`flex flex-col text-[32px] font-bold ${
+            className={`flex flex-col text-[32px] font-bold mt-[90px] ${
               theme === "light" ? "text-[#eb436f]" : "text-[#87ec6c]"
             }`}
           >

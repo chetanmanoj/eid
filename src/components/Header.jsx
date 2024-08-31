@@ -4,6 +4,7 @@ import { ThemeContext, AudioContext, LanguageContext } from "../context";
 import { mainlogo, header1, header2 } from "../assets";
 
 const Header = () => {
+  // Import context/states
   const { theme, toggleTheme } = useContext(ThemeContext);
   const { language, switchLanguage } = useContext(LanguageContext);
   const { audio, toggleAudio } = useContext(AudioContext);
@@ -15,7 +16,7 @@ const Header = () => {
             onClick={() => switchLanguage(language === "en" ? "ar" : "en")}
             className="text-[#902cf5] font-bold rounded-3xl border-[1px] bg-white text-[14px] border-[#902cf5] w-[5.313rem] h-[2.18rem]"
           >
-            {language === "en" ? "English" : "عربي"}
+            {language === "en" ?  "عربي" : "English"}
           </button>
           <button
             onClick={() => toggleAudio()}
@@ -32,8 +33,7 @@ const Header = () => {
             onClick={toggleTheme}
             className="text-[#902cf5] font-bold rounded-3xl border-[1px] bg-white text-[14px] border-[#902cf5] w-[5.313rem] h-[2.18rem]"
           >
-            {" "}
-            Mode
+            {theme === "light" ? "Dark" : "Light"}
           </button>
         </div>
       </div>

@@ -2,9 +2,11 @@ import { useContext } from "react";
 import { ThemeContext, LanguageContext } from "../context";
 
 const Events = () => {
+  // Import context/state 
   const { theme } = useContext(ThemeContext);
   const { language } = useContext(LanguageContext);
 
+  
   const buttonData = [
     { ar: "كتيب فعاليات العيد", en: "Eid Events Booklet" },
     { ar: "بطاقات المعايدة", en: "Greetings Cards" },
@@ -12,11 +14,12 @@ const Events = () => {
     { ar: "مطبوعات الشركات", en: "Companies Decorations" },
   ];
 
+  // Variable to store style
   const commonClasses =
     "font-bold rounded-3xl px-6 text-[1.09rem] w-[16rem] h-[3.2rem] transition duration-300";
 
   return (
-    <div className=" flex flex-col items-center  gap-5 px-28 py-4 mt-64 mb-64">
+    <div className=" flex flex-col items-center  gap-5 px-28 py-4 pt-64 mb-64">
       <div className="text-[1.875rem] font-light w-1/3 py-[3.125rem] self-center text-center  ">
         {language === "ar"
           ? `بعد الكشخة يبدأ وقت التكبيرات وصلاة العيد وأجوائها الحلوة .. نسلم ونعايد وبعدين نلحق على جمعة العائلة`
