@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ThemeContext, LanguageContext } from "../context";
 
-const Main = () => {
+const Mainarea = () => {
   const { theme } = useContext(ThemeContext);
   const { language } = useContext(LanguageContext);
 
@@ -57,7 +57,14 @@ const Main = () => {
             : `After we emerge from our Eid coma, everyone’s excited about Eid outings. Where do we go? What adventures can await? Don’t worry, we have you covered, with Eid events.`}
         </div>
 
-        <button className="bg-[#8a59c8] text-white font-bold rounded-3xl px-6 text-[1.125rem] w-full h-[3.2rem] hover:bg-[#f5c547] transition duration-300">
+        <button
+          className={`font-bold rounded-3xl px-6 text-[1.125rem] w-full h-[3.2rem] transition duration-300 
+    ${
+      theme === "light"
+        ? "bg-[#8a59c8] text-white hover:bg-[#f5c547]"
+        : "bg-[#f5c547] text-[#514f53] hover:bg-white"
+    }`}
+        >
           {language === "ar"
             ? `اكتشف فعاليات العيد `
             : `Discover our Eid Events`}
@@ -67,4 +74,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Mainarea;

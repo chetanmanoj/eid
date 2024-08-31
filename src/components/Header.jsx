@@ -20,15 +20,21 @@ const Header = () => {
           <button
             onClick={() => toggleAudio()}
             className="text-[#902cf5] font-bold rounded-3xl border-[1px] bg-white text-[14px] border-[#902cf5] w-[5.313rem] h-[2.18rem]"
-          ></button>
+          >
+            {audio === true ? "Mute" : "Unmute"}
+          </button>
         </div>
         <div className="">
           <img src={mainlogo} alt="Logo" className="h-32" />
         </div>
         <div className="">
-          <button onClick={toggleTheme}
-           className="text-[#902cf5] font-bold rounded-3xl border-[1px] bg-white text-[14px] border-[#902cf5] w-[5.313rem] h-[2.18rem]"
-            > Mode</button>
+          <button
+            onClick={toggleTheme}
+            className="text-[#902cf5] font-bold rounded-3xl border-[1px] bg-white text-[14px] border-[#902cf5] w-[5.313rem] h-[2.18rem]"
+          >
+            {" "}
+            Mode
+          </button>
         </div>
       </div>
       <div className="relative z-10">
